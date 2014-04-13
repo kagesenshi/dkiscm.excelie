@@ -34,6 +34,9 @@ setup(name='dkiscm.excelie',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
+          'xlwt',
+          'xlrd',
+          'tablib',
           # -*- Extra requirements: -*-
       ],
       extras_require={
