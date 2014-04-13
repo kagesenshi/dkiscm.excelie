@@ -401,7 +401,10 @@ class UploadForm(form.SchemaForm):
         obj.setDescription(data['description'])
 
         for k in ['job_code', 'education', 'education_description',
-                  'similar_job_titles','professional_certification',
+                  'similar_job_titles', 'exp_levels', 
+                  'professional_certification',
+                  'job_demand',
+                  'job_demand_synovate2013',
                   'suitable_for_entry']:
             setattr(obj, k, data[k])
 
@@ -455,7 +458,7 @@ class UploadForm(form.SchemaForm):
             edata = {'skill': data['%s_%s_skill' % (key, i)]}
             for exp in [term.value for term in expvocab]:
                 edata[exp] = data['%s_%s_%s' % (key, i, exp)]
-                edata['%s_required' % exp] = int(data[
+                edata['%s_weight' % exp] = int(data[
                     '%s_%s_%s_weight' % (key, i, exp)
                 ])
             data[key].append(edata)
