@@ -1,7 +1,7 @@
 from five import grok
 from Products.CMFCore.interfaces import IContentish, ISiteRoot
 from zope.schema.interfaces import IVocabularyFactory
-from dkiscm.jobmatrix.interfaces import IProductSpecific
+from dkiscm.excelie.interfaces import IProductSpecific
 import json
 from zope.component import getUtility
 import tablib
