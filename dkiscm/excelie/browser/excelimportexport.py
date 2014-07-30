@@ -48,7 +48,6 @@ class ExcelExport(grok.View):
         for entry in output:
             data.append([d[1] for d in entry])
 
-        print headers
         dataset = tablib.Dataset(*data, headers=headers)
         out = dataset.xls
         self.request.response.setHeader('Content-Type', 'application/msword')
@@ -57,7 +56,6 @@ class ExcelExport(grok.View):
         self.request.response.setHeader('Content-Disposition', 
             'attachment; filename=jobmatrix.xls')
         return out
-#        return json.dumps(output, indent=4)
 
     def _get_obj_data(self, obj):
         job = [
